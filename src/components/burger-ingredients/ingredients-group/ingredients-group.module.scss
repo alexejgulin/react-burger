@@ -1,0 +1,14 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-self: stretch;
+
+	max-height: calc(100vh - 370px); //344px
+	overflow-y: auto;
+
+	.groupCaption {
+		text-align: justify;
+	}
+}

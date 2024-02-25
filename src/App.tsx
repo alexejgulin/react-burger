@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react'
+import './App.css'
+import './_reset.css'
+import Layout from './layout/layout'
+import { IBurger } from './types/burger.interface'
+
+const BASE_URL = 'https://norma.nomoreparties.space/api'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [state, setState] = useState({
+		isLoading: false,
+		hasError: false,
+		apiData: []
+	})
+
+	const getIngredients = () => {
+		setState({ ...state, hasError: false, isLoading: true })
+		fetch(`${BASE_URL}/ingredients`)
+			.then(res => res.json())
+			.then(data => {
+				const apiData = data.data
+				setState({ ...state, apiData, isLoading: false })
+			})
+			.catch(e => {
+				setState({ ...state, hasError: true, isLoading: false })
+			})
+	}
+
+	useEffect(() => {
+		getIngredients()
+	}, [])
+
+	const { apiData, isLoading, hasError } = state
+
+	const data = apiData as IBurger[]
+
+	return (
+		<div className='App'>
+			{isLoading && 'Загрузка...'}
+			{hasError && 'Произошла ошибка'}
+			{!isLoading && !hasError && <Layout burgers={data} />}
+		</div>
+	)
 }
 
-export default App;
+export default App
