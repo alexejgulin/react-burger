@@ -2,8 +2,12 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	align-items: flex-end;
-	align-self: stretch;
+	align-items: center;
+	align-self: center;
 
-	max-width: 600px;
+	max-width: 720px;
+}
+
+.secondText {
+	color: #8585ad;
 }

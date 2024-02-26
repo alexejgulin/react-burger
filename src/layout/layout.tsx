@@ -6,8 +6,6 @@ import { BurgerArray } from '../types/burger.interface'
 import styles from './layout.module.scss'
 
 export default function Layout({ burgers }: { burgers: BurgerArray }) {
-	console.log(burgers)
-
 	return (
 		<>
 			<header>

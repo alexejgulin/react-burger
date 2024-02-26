@@ -1,15 +1,3 @@
-
-export interface IBurgerApi {
-    isLoading: boolean
-    hasError: boolean;
-    burgers: IBurger[]
-}
-
-export interface IBurgerList {
-    length: number
-    data: IBurger[]
-}
-
 export type BurgerArray = IBurger[];
 
 export interface IBurger {

@@ -18,7 +18,7 @@ export default function ConstructorGroup({
 					thumbnail={'https://code.s3.yandex.net/react/code/bun-02.png'}
 				/>
 			</div>
-			<div className={`${styles.subContainer} pr-1`}>
+			<div className={`${styles.subContainer} pr-1`}>				
 				{burgers &&
 					burgers.map((ingredient: IBurger) => (
 						<ConstructorItem
