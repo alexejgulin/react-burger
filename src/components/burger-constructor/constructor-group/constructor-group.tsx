@@ -18,17 +18,21 @@ export default function ConstructorGroup({
 					thumbnail={'https://code.s3.yandex.net/react/code/bun-02.png'}
 				/>
 			</div>
-			<div className={`${styles.subContainer} pr-1`}>				
+			<div className={`${styles.subContainer} pr-1`}>
 				{burgers &&
-					burgers.map((ingredient: IBurger) => (
-						<ConstructorItem
-							key={ingredient._id}
-							text={ingredient.name}
-							price={ingredient.price}
-							thumbnail={ingredient.image}
-						/>
-					))}
+					burgers.map(
+						(ingredient: IBurger) =>
+							ingredient.type !== 'bun' && (
+								<ConstructorItem
+									key={ingredient._id}
+									text={ingredient.name}
+									price={ingredient.price}
+									thumbnail={ingredient.image}
+								/>
+							)
+					)}
 			</div>
+
 			<div className='pr-5 pt-2'>
 				<ConstructorItem
 					type='bottom'

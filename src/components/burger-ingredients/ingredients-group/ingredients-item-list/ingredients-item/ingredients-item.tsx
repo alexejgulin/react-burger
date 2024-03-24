@@ -1,23 +1,25 @@
-import { CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components'
-import { useState } from 'react'
+import {
+	Counter,
+	CurrencyIcon
+} from '@ya.praktikum/react-developer-burger-ui-components'
+import { useModal } from '../../../../../hooks/useModal'
 import { IBurger } from '../../../../../types/burger.interface'
 import { Modal } from '../../../../modal/modal'
 import IngredientsDetail from '../../../ingredients-detail/ingredients-detail'
 import styles from './ingredients-item.module.scss'
 export default function IngredientsItem(ingredient: IBurger) {
-	const [modalActive, setModalActive] = useState(false)
-
-	const handleModalOpen = () => {
-		setModalActive(true)
-	}
-	const handleModalClose = () => {
-		setModalActive(false)
-	}
+	const { isModalOpen, openModal, closeModal } = useModal()
 
 	return (
 		<>
-			<div className={styles.container} onClick={handleModalOpen}>
-				{/* <Counter count={1} size='default' extraClass='m-1' /> */}
+			<div className={styles.container} onClick={openModal}>
+				<div className={styles.counter}>
+					<Counter
+						count={ingredient.type === 'bun' ? 2 : 1}
+						size='default'
+						extraClass='m-1'
+					/>
+				</div>
 				<div className='mr-4 ml-4'>
 					<img src={ingredient.image} />
 				</div>
@@ -34,8 +36,8 @@ export default function IngredientsItem(ingredient: IBurger) {
 					{ingredient.name}
 				</div>
 			</div>
-			{modalActive && (
-				<Modal title='Детали ингредиента' onClose={handleModalClose}>
+			{isModalOpen && (
+				<Modal title='Детали ингредиента' onClose={closeModal}>
 					<IngredientsDetail {...ingredient} />
 				</Modal>
 			)}

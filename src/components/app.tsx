@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+import Layout from '../layout/layout'
+import { IBurger } from '../types/burger.interface'
 import './_reset.css'
-import Layout from './layout/layout'
-import { IBurger } from './types/burger.interface'
+import './app.css'
 
 const BASE_URL = 'https://norma.nomoreparties.space/api'
 
@@ -16,10 +16,19 @@ function App() {
 	const getIngredients = () => {
 		setState({ ...state, hasError: false, isLoading: true })
 		fetch(`${BASE_URL}/ingredients`)
-			.then(res => res.json())
+			.then(res => {
+				if (res.ok) {
+					return res.json()
+				}
+				return Promise.reject(`Ошибка ${res.status}`)
+			})
 			.then(data => {
 				const apiData = data.data
-				setState({ ...state, apiData, isLoading: false })
+				setState({
+					...state,
+					apiData,
+					isLoading: false
+				})
 			})
 			.catch(e => {
 				setState({ ...state, hasError: true, isLoading: false })

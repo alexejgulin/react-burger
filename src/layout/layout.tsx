@@ -14,6 +14,17 @@ export default function Layout({ burgers }: { burgers: BurgerArray }) {
 			<main className={styles.main}>
 				<BurgerIngredients burgers={burgers} />
 				<BurgerConstructor burgers={burgers} />
+				{/* <div className={styles.qqq}>
+					{burgers &&
+						burgers.map((ingredient: IBurger) => (
+							<ConstructorItem
+								key={ingredient._id}
+								text={ingredient.name}
+								price={ingredient.price}
+								thumbnail={ingredient.image}
+							/>
+						))}
+				</div> */}
 			</main>
 		</>
 	)

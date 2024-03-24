@@ -13,7 +13,7 @@ export default function BurgerConstructor({
 		<div className={styles.container}>
 			<div className={styles.top}>
 				<ConstructorHeader />
-				<ConstructorGroup burgers={burgers}/>
+				<ConstructorGroup burgers={burgers} />
 			</div>
 			<div className={styles.bottom}>
 				<ConstructorFooter />
