@@ -1,0 +1,14 @@
+.main {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: stretch;
+	gap: 48px;
+	min-height: calc(100vh - 88px);
+}
+
+.qqq {
+	display: grid;
+	width: 1100px;
+	
+}

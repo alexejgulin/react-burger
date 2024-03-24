@@ -1,0 +1,85 @@
+.card {
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.constructorElement {
+	padding: 16px 24px;
+	display: inline-block;
+	border-radius: var(--common-border-radius-s);
+	background: var(--background-element);
+	max-width: 536px;
+	width: 100%;
+	min-height: 80px;
+	font-family: 'Jet Brains Mono';
+	font-size: 16px;
+	line-height: 24px;
+	color: #f2f2f3;
+	flex-grow: 1;
+	box-sizing: border-box;
+}
+
+.pos_top {
+	border-radius: 88px 88px 40px 40px;
+}
+
+.pos_bottom {
+	border-radius: 40px 40px 88px 88px;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+}
+
+.rowProp {
+	display: flex;
+	flex-direction: row;
+	align-items: right;
+	justify-content: flex-end;
+}
+
+.image {
+	width: 80px;
+	height: 40px;
+	margin-right: 20px;
+}
+
+.text {
+	margin-right: 20px;
+	display: inline-flex;
+	align-items: center;
+	line-height: 24px;
+	text-align: left;
+	flex-grow: 1;
+}
+
+.price {
+	margin-left: auto;
+	display: inline-flex;
+	text-align: right;
+	font-family: 'Iceland';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 24px;
+}
+
+.priceSvg {
+	margin-left: 9px;
+
+	height: 24px;
+	width: 33px;
+}
+
+.action {
+	cursor: pointer;
+
+	height: 24px;
+	width: 44px;
+}

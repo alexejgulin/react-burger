@@ -1,0 +1,8 @@
+.App {
+	background-color: #131316;
+	max-width: 1240px;
+	margin: 0 auto;
+	text-align: center;
+	min-height: 100vh;
+	height: 100vh;
+}

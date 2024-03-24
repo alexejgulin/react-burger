@@ -1,0 +1,55 @@
+.container {
+	height: 88px;
+	width: 100%;
+	position: relative;
+	display: flex;
+
+	align-items: center;
+	flex-direction: row;
+
+	p {
+		color: #8585ad;
+	}
+
+	.active {
+		color: #f2f2f3;
+	}
+
+	.button {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.menu {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		ul {
+			display: flex;
+			flex-direction: row;
+
+			//justify-content: space-around;
+			cursor: pointer;
+		}
+	}
+
+	.logo {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+
+	.user {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+
+		margin-left: auto;
+	}
+}
